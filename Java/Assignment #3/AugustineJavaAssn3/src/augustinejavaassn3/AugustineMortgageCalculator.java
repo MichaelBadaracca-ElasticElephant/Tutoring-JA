@@ -5,17 +5,26 @@
  */
 package augustinejavaassn3;
 
-/**
- *
- * @author Michael
- */
-public class AugustineJavaAssn3 {
 
-    /**
-     * @param args the command line arguments
-     */
+public class AugustineMortgageCalculator {
+
+    public static void describeProgram(){
+        System.out.println("This program performs various mortgage calculations");
+    }
+    
+    public static double calculateMonthlyPropertyTax(double purchasePrice){
+        double purchasePricePercentage = 0.85;
+        double adminFee = 35;
+        double homeAssessedValue = purchasePricePercentage * purchasePrice;
+        int monthsInYear = 12;
+        double monthlyPropertyTax = (0.0063 * homeAssessedValue + adminFee) / monthsInYear;
+        
+        return monthlyPropertyTax;
+    }
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        describeProgram();
+        System.out.println(calculateMonthlyPropertyTax(101000));
     }
     
     /**   
